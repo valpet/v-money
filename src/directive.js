@@ -1,4 +1,4 @@
-import {format, setCursor, event} from './utils'
+import { format, setCursor, event } from './utils'
 import assign from './assign'
 import defaults from './options'
 
@@ -26,7 +26,9 @@ export default function (el, binding) {
   }
 
   el.onfocus = function () {
-    setCursor(el, el.value.length - opt.suffix.length)
+    setTimeout(function () {
+      event.target.select()
+    }, 0)
   }
 
   el.oninput()
