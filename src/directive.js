@@ -25,12 +25,6 @@ export default function (el, binding) {
     el.dispatchEvent(event('change')) // v-model.lazy
   }
 
-  el.onfocus = function () {
-    setTimeout(function () {
-      event.target.select()
-    }, 0)
-  }
-
   el.oninput()
   el.dispatchEvent(event('input')) // force format after initialization
 }
